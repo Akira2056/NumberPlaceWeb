@@ -600,7 +600,29 @@ function App() {
         setColorArray(newColorArray);
       }
     } else {
-      alert('保存されたデータがありません');
+      // alert('保存されたデータがありません');
+      // データがない場合はデフォルトの問題を読み込む
+      const defaultNumberArray = [
+        ['', '4', '6', '', '', '5', '7', '', ''],
+        ['', '', '', '9', '', '', '', '', ''],
+        ['', '9', '', '', '', '1', '', '', '6'],
+        ['', '', '', '', '', '', '9', '', ''],
+        ['', '3', '', '', '', '', '', '', ''],
+        ['4', '', '', '', '', '', '', '', '8'],
+        ['', '8', '', '', '', '', '', '7', ''],
+        ['5', '7', '', '3', '', '', '', '8', '2'],
+        ['2', '', '', '', '', '', '3', '', ''],
+      ];
+      setNumberArray(defaultNumberArray);
+      const newColorArray = deepCopy(colorArray);
+      indexArray.forEach(({ rowIndex, colIndex }) => {
+        if (defaultNumberArray[rowIndex][colIndex] === '') {
+          newColorArray[rowIndex][colIndex] = 'text-red-600';
+        } else {
+          newColorArray[rowIndex][colIndex] = 'text-black';
+        }
+      });
+      setColorArray(newColorArray);
     }
   };
 
