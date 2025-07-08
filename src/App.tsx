@@ -600,7 +600,7 @@ function App() {
         setColorArray(newColorArray);
       }
     } else {
-      alert('保存データがありません。サンプル問題を呼び出しますか？');
+      alert('保存データがありません。サンプル問題を呼び出します。');
       // データがない場合はデフォルトの問題を読み込む
       const defaultNumberArray = [
         ['', '4', '6', '', '', '5', '7', '', ''],
